@@ -3,6 +3,11 @@ import User from '../models/User';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import pool from '../db';
+import dotenv from 'dotenv'
+
+dotenv.config();
+const JWT_SECRET = process.env.JWT_SECRET || 'alt';
+
 
 export async function login(req:Request, res:Response) : Promise<any> {
     const {mail, password} = req.body;
@@ -23,7 +28,7 @@ export async function login(req:Request, res:Response) : Promise<any> {
         }
 
         // Create and sign JWT token
-        const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET || 'your_jwt_secret', { expiresIn: '1h' });
+        const token = jwt.sign({ id: user.id, username: user.name }, JWT_SECRET, { expiresIn: '1h' });
 
         // Return user data and token
         return res.json({
