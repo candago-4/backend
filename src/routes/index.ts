@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import login from './login';
 import register from './register';
-import { requireAuth } from '../middleware/ authMiddleware';
+import { requireAuth } from '../middleware/authMiddleware';
 
 const app = express();
 app.use(cors());
