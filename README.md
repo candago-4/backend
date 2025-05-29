@@ -32,15 +32,21 @@ Ensure you have the following installed:
    ```bash
    npm install
 
-4. **Configuration:**
+4. **Config the .env:**
 
    ```bash
-    Example environment variables
-    DATABASE_URL=your_database_url
-    PORT=your_port_number
+    PORT=your_available_port_number
+    JWT_SECRET=your_jwt_secret
+
+5. **Config the database:**
+
+   If u installed postgreesql with postgres as default superuser
+   ```bash
+    sudo -u postgres psql
+    \i path/to/your/project/src/db/create_db.sql
   
   **Running the application:**
 
    ```bash
    npm run dev
-
+   
