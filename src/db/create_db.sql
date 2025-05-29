@@ -11,7 +11,7 @@ END
 $do$;
 
 -- Create the database if it doesn't exist
-CREATE DATABASE "LynchAreaDB"
+CREATE DATABASE "lynchareadb"
     WITH
     OWNER = lynch_admin
     ENCODING = 'UTF8'
