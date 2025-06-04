@@ -5,6 +5,6 @@ const router = Router();
 
 const dataController = new DataController();
 
-router.get("/", dataController.getData.bind(dataController));
+router.post("/", dataController.persistData.bind(dataController));
 
 export default router
