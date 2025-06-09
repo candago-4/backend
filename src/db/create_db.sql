@@ -15,7 +15,8 @@ CREATE DATABASE "lynchareadb"
     WITH
     OWNER = lynch_admin
     ENCODING = 'UTF8'
-    LC_COLLATE = 'Portuguese_Brazil.1252'
-    LC_CTYPE = 'Portuguese_Brazil.1252'
+    -- Change LC_COLLATE and LC_CTYPE to your desired locale
+    LC_COLLATE = 'en_US.UTF-8'
+    LC_CTYPE = 'en_US.UTF-8'
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1; 
