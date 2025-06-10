@@ -31,8 +31,8 @@ const createTables = async () => {
     CREATE TABLE IF NOT EXISTS data (
       id SERIAL PRIMARY KEY,
       device_id INT NOT NULL,
-      latitude INT NOT NULL,
-      longitude INT NOT NULL,
+      latitude DOUBLE PRECISION NOT NULL,
+      longitude DOUBLE PRECISION NOT NULL,
       speed INT,
       datetime TIMESTAMPTZ NOT NULL,
       CONSTRAINT fk_device

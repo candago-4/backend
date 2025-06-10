@@ -5,23 +5,28 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx ts-node-dev src/server/index.ts",
-    "start": "ts-node src/db/init.ts"
+    "start": "ts-node src/db/init.ts",
+    "mqtt": "ts-node-dev src/server/mqttListener.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.9.0",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
+    "mqtt": "^5.13.1",
     "pg": "^8.14.1"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.4",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^22.15.30",
     "@types/pg": "^8.11.11",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
