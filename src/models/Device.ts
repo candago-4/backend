@@ -1,4 +1,4 @@
-expor default class Device {
+export default class Device {
     id: string;
     name: string;
     user_id: string;
