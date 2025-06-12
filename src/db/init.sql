@@ -37,6 +37,14 @@ CREATE TABLE IF NOT EXISTS users (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS cordinates(
+    id SERIAL PRIMARY KEY,
+    LAT VARCHAR(6) NOT NULL,
+    LON VARCHAR(6) NOT NULL,
+    DT_UPLOAD DATETIME
+)
+
+
 -- Grant privileges on users table to lynch_admin
 GRANT ALL PRIVILEGES ON TABLE users TO lynch_admin;
 GRANT USAGE, SELECT ON SEQUENCE users_id_seq TO lynch_admin; 
