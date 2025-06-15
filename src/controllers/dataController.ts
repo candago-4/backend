@@ -26,9 +26,15 @@ export class DataController {
     }
 
     public async persistData(req: Request, res: Response): Promise<any> {
+<<<<<<< HEAD
         const { device_id, latitude, longitude, speed, datetime } = req.body;
         try {   
             await pool.query('INSERT INTO data (device_id, latitude, longitude, speed, datetime) VALUES ($1, $2, $3, $4, $5)', [device_id, latitude, longitude, speed, datetime]);
+=======
+        const { deviceId, latitude, longitude, speed, datetime } = req.body;
+        try {   
+            await pool.query('INSERT INTO data (device_id, latitude, longitude, speed, datetime) VALUES ($1, $2, $3, $4, $5)', [deviceId, latitude, longitude, speed, datetime]);
+>>>>>>> 7f6ef80a607e3740b5ff2796972b673224a63a68
 
             return res.status(201).json({ message: 'Data persisted successfully' });
         } catch (error) {
