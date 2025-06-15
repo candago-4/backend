@@ -14,13 +14,9 @@ app.use(express.json());
 
 app.use('/login', login);
 app.use('/register', register);
-<<<<<<< HEAD
-app.use('/gps', gps)
-=======
 app.use('/home', requireAuth, home);
 app.use('/api/persist', persistence);
 app.use('/api/devices', requireAuth, devices);
->>>>>>> 7f6ef80a607e3740b5ff2796972b673224a63a68
 
 
 export default app
