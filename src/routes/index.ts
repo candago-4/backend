@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import login from './login';
+import gps from './gps';
 import register from './register';
 import home from './home';
 import persistence from './persistence';
@@ -13,9 +14,7 @@ app.use(express.json());
 
 app.use('/login', login);
 app.use('/register', register);
-app.use('/home', requireAuth, home);
-app.use('/persistence', persistence);
-app.use('/devices', requireAuth, devices);
+app.use('/gps', gps)
 
 
 export default app
