@@ -1,0 +1,26 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: src/services/backend/Dockerfile
+    hostname: lynchareaAPI
+    container_name: backend
+    command: npx ts-node-dev src/server/index.ts
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+
+
+  database:
+    container_name: lynchareadb
+    image: postgres:15.13
+    restart: always
+    environment:
+      POSTGRES_USER: lynch_admin
+      POSTGRES_PASSWORD: arleyzinha_safadinha
+      POSTGRES_DB: lynchareadb
+    ports:
+      - "5437:5432"
+    volumes:
+      - .:/app
