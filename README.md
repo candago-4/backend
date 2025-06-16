@@ -49,4 +49,21 @@ Ensure you have the following installed:
 
    ```bash
    npm run dev
+   ```
+
+**mqtt topics send example**
+
+```mosquitto_pub -h localhost -t "device/data" -m '{
+  "deviceId": "4",
+  "gps": {
+    "latitude": 37.7749,
+    "longitude": -122.4194
+  },
+  "speed": {
+    "value": 55.5,
+    "unit": "km/h"
+  },
+  "timestamp": "2025-06-04 14:30:00"
+}'
+
    
