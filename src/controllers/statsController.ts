@@ -69,7 +69,7 @@ export class StatsController {
                 )
                 SELECT ROUND(SUM(distance_km)::numeric, 4) AS total_distance_km
                 FROM distances;
-                `, [4]);
+                `, [deviceId]);
 
                 const total = parseFloat(resultDistTraveled.rows[0].total_distance_km);
                 console.log(`🚗 Total distance: ${total} km`);
