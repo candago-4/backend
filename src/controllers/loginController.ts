@@ -8,7 +8,6 @@ import dotenv from 'dotenv'
 dotenv.config();
 const JWT_SECRET = process.env.JWT_SECRET || 'alt';
 
-
 export async function login(req:Request, res:Response) : Promise<any> {
     const {mail, password} = req.body;
 

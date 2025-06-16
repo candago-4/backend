@@ -2,9 +2,9 @@ import { Pool } from 'pg';
 
 const pool = new Pool({
   user: 'lynch_admin',
-  host: 'localhost',
+  host: 'lynchareadb-container',
   database: 'lynchareadb',
-  password: 'passwrod',
+  password: 'arleyzinha_safadinha',
   port: 5432
 });
 
