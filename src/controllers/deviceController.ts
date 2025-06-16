@@ -4,7 +4,10 @@ import pool from '../db';
 export class DevicesController {
 
     public async getDevices(req: Request, res: Response): Promise<any> {
-        const user_id = req.query
+        const user_id = parseInt(req.query.user_id as string, 10);
+        console.log("aquiii")
+        console.log(user_id, typeof user_id);
+        
         try {
             const result = await pool.query('SELECT * FROM devices WHERE user_id = $1', [user_id]);
 
