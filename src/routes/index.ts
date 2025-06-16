@@ -20,5 +20,4 @@ app.use('/api/persist', persistence);
 app.use('/api/devices', requireAuth, devices);
 app.use('/validate-token', requireAuth, validateToken);
 
-
-export default app
+export default app;
