@@ -9,12 +9,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Register routes
 app.use('/login', login);
 app.use('/register', register);
-app.use('/gps', gps)
+app.use('/gps', gps);
 
+// Protected route example
 app.get('/home', requireAuth, (req, res) => {
-res.json({ message: `Welcome ${(req as any).user.username}` });
+  res.json({ message: `Welcome ${(req as any).user.username}` });
 });
 
-export default app
+export default app;
