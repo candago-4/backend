@@ -34,6 +34,7 @@ client.on('message', (topic: string, message: Buffer) => {
                 latitude: data.gps.latitude,
                 longitude: data.gps.longitude,
                 speed: parseInt(data.speed.value, 10),
+                // speed: parseInt(data.speed,10),
                 datetime : data.timestamp
             });
             console.log(response.data);
