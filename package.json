@@ -26,6 +26,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.9",
+    "@types/mqtt": "^2.5.0",
     "@types/node": "^22.15.30",
     "@types/pg": "^8.11.11",
     "ts-node": "^10.9.2",
