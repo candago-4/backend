@@ -26,7 +26,6 @@ client.on('message', (topic: string, message: Buffer) => {
     const data = JSON.parse(payload); 
 
     console.log(`Received on topic: ${topic}`);
-    console.log(parseInt(data.speed.value, 10));
     
     async function postData() {
         try {

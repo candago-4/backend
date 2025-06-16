@@ -6,7 +6,7 @@ import register from './register';
 import home from './home';
 import persistence from './persistence';
 import devices from './devices';
-import { requireAuth } from '../middleware/ authMiddleware';
+import { requireAuth } from '../middleware/authMiddleware';
 import validateToken from './validate-token';
 
 const app = express();
