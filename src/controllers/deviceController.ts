@@ -5,9 +5,9 @@ export class DevicesController {
 
     public async getDevices(req: Request, res: Response): Promise<any> {
         const user_id = parseInt(req.query.user_id as string, 10);
-        console.log("aquiii")
-        console.log(user_id, typeof user_id);
-        
+        if (isNaN(user_id)) {
+            return res.status(400).json({ message: 'Invalid user_id parameter' });
+        }
         try {
             const result = await pool.query('SELECT * FROM devices WHERE user_id = $1', [user_id]);
 
@@ -51,16 +51,20 @@ export class DevicesController {
     }
 
     public async deleteDevice(req: Request, res: Response): Promise<any> {
-        const { id } = req.query;
+        const id = parseInt(req.query.id as string, 10);
+        console.log('Received delete request for device id:', req.query.id, 'Parsed id:', id);
         try {
-            if (id === undefined) {
-                return res.status(400).json({ message: 'Device ID is required' });
+            if (isNaN(id)) {
+                console.log('Invalid device ID received:', req.query.id);
+                return res.status(400).json({ message: 'Invalid device ID' });
             }
             const result = await pool.query('DELETE FROM devices WHERE id = $1', [id]);
+            console.log('Delete query result:', result);
             if (result.rowCount === 0) {
+                console.log('Device not found for id:', id);
                 return res.status(404).json({ message: 'Device not found' });
             }
-            console.log(result.rowCount, 'rows deleted');
+            console.log(result.rowCount, 'rows deleted for id:', id);
             return res.status(200).json({ message: 'Device deleted successfully' });
         } catch (error) {
             console.error('Error deleting device:', error);

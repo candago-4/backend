@@ -1,10 +1,13 @@
 import { Pool } from 'pg';
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 const pool = new Pool({
   user: 'lynch_admin',
   host: 'lynchareadb-container',
   database: 'lynchareadb',
-  password: 'arleyzinha_safadinha',
+  password: process.env.DB_PASSWORD || '123',
   port: 5432
 });
 
