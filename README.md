@@ -51,6 +51,23 @@ Ensure you have the following installed:
    npm run dev
    ```
 
+**Docker Application:**
+
+Build and run containers
+```bash
+docker-compose up --build -d
+   ```
+
+Check running services:
+```bash
+docker-compose ps
+   ```
+
+Stop containers:
+```bash
+docker-compose down
+   ```
+
 **mqtt topics send example**
 
 ```mosquitto_pub -h localhost -t "device/data" -m '{
@@ -65,5 +82,3 @@ Ensure you have the following installed:
   },
   "timestamp": "2025-06-04 14:30:00"
 }'
-
-   
