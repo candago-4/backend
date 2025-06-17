@@ -125,9 +125,9 @@ export class StatsController {
                         }
 
                     res.json({
-                    averageDistancePerDay: distancesKm[0],
-                    totalDistance: total,
-                    averageSpeed: avgSpeed,
+                    averageDistancePerDay: distancesKm[0] / 100,
+                    totalDistance: total / 100,
+                    averageSpeed: avgSpeed / 100,
                     downtimeProbability: downtimeProb,
                     resultPosition: resultPosition.rows.length > 0 ? resultPosition.rows[0] : null
                 });
