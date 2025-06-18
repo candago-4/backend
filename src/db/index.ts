@@ -4,7 +4,7 @@ const pool = new Pool({
   user: 'lynch_admin',
   host: 'lynchareadb-container',
   database: 'lynchareadb',
-  password: 'arleyzinha_safadinha',
+  password: 'password',
   port: 5432
 });
 
